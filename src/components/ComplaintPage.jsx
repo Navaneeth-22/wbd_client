@@ -19,7 +19,7 @@ const ComplaintPage = () => {
     const fetchComplaints = async () => {
       console.log("fetch is called")
       const response = await fetch(
-        "http://localhost:5001/complaints/sentComplaints",
+        "https://myconstituencies.onrender.com/complaints/sentComplaints",
         {
           method: "GET",
           headers: {
@@ -118,7 +118,7 @@ const ComplaintPage = () => {
   const resolveComplaint = async (id) => {
     console.log("jjjfjfj",id)
     const response = await fetch(
-      `http://localhost:5001/complaints/resolveComplaint/${id}`,
+      `https://myconstituencies.onrender.com/complaints/resolveComplaint/${id}`,
       {
         method: "PUT",
         headers: {
@@ -164,7 +164,7 @@ const ComplaintPage = () => {
           setSearchedComplaints(complaints);
           return;
         }
-        const response = await axios.get(`http://localhost:5001/complaints/search?q=${encodeURIComponent(search)}`, 
+        const response = await axios.get(`https://myconstituencies.onrender.com/complaints/search?q=${encodeURIComponent(search)}`, 
         { headers: { authorization: `Bearer ${localStorage.getItem("token")}` }}
       );
 

@@ -22,7 +22,7 @@ const  DeptPage = () => {
     
     useEffect(() => {
         //get all the complaints which are send to this user department
-        fetch(`http://localhost:5001/complaints/deptComplaints`, {
+        fetch(`https://myconstituencies.onrender.com/complaints/deptComplaints`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -116,7 +116,7 @@ const  DeptPage = () => {
             setSearchedComplaints(complaints);
             return;
           }
-          const response = await axios.get(`http://localhost:5001/complaints/dept/search?q=${encodeURIComponent(search)}`, 
+          const response = await axios.get(`https://myconstituencies.onrender.com/complaints/dept/search?q=${encodeURIComponent(search)}`, 
           { headers: { authorization: `Bearer ${localStorage.getItem("token")}` }}
         );
   

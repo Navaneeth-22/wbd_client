@@ -11,7 +11,7 @@ const Upload = () => {
 
     data.append("image", img1.current.files[0]);
     axios
-      .post("http://localhost:5001/upload", {
+      .post("https://myconstituencies.onrender.com/upload", {
         headers: {
           "Content-Type": "multipart/form-data",
         },

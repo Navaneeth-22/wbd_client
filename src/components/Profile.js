@@ -25,7 +25,7 @@ function Profile() {
   useEffect(()=>{
       const data=JSON.parse(localStorage.getItem("loginData"));
     if(data.pic !== ''){
-        axios.get(`http://localhost:5001/upload/${data.pic}`,{
+        axios.get(`https://myconstituencies.onrender.com/upload/${data.pic}`,{
             responseType : "blob",
         }).
         then((res)=>{
@@ -43,7 +43,7 @@ function Profile() {
   };
 
   const updatedDetails = async () => {
-    const response = await fetch('http://localhost:5001/user/update',{
+    const response = await fetch('https://myconstituencies.onrender.com/user/update',{
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -88,7 +88,7 @@ function Profile() {
     formData.append('profilepic', selectedFile);
     try {
         const res = await fetch(
-            `http://localhost:5001/upload/profilepic`,
+            `https://myconstituencies.onrender.com/upload/profilepic`,
             {
               method: "put",
               headers: {
